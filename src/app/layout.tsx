@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata : Metadata = {
   title: "Matra drishti Medicare Hospital | Expert Doctors in Lucknow",
+  metadataBase:new URL('https://matra-drishti-medicare.arbaazuniquegzp.workers.dev/'),
   description:
     "Matra drishti Medicare Hospital in Lucknow offers 24x7 emergency care, expert doctors, modern facilities, and hassle-free appointments.",
   keywords: [
@@ -33,11 +34,11 @@ export const metadata : Metadata = {
     title: "Matra drishti Medicare Hospital",
     description:
       "Trusted hospital in Lucknow with expert doctors, emergency services, and modern healthcare facilities.",
-    url: "https://yourhospitaldomain.com",
+    url: "https://matra-drishti-medicare.arbaazuniquegzp.workers.dev/",
     siteName: "Matra drishti Hospital",
     images: [
       {
-        url: "/og-image.jpg", // Replace with actual homepage banner image
+        url: "/og-image.jpeg", // Replace with actual homepage banner image
         width: 1200,
         height: 630,
         alt: "Matra drishti Medicare",
