@@ -1,6 +1,5 @@
 // app/about/page.tsx
-export const dynamic = "force-dynamic"; 
-
+export const runtime = 'edge';
 export default function AboutPage() {
   return (
     <div>
