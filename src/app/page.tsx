@@ -1,10 +1,7 @@
 
 
 "use client"
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from 'react';
 import Banner from '@/components/Home/Banner';
 import QuickFacilities from '@/components/Home/QuickFacilities';
 import AboutUsSection from '@/components/Home/AboutUsSection';
