@@ -1,0 +1,8 @@
+{
+  "name": "matra-drishti-medicare",
+  "compatibility_date": "2025-09-05",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": ".vercel/output/static"
+}

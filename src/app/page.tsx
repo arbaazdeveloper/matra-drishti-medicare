@@ -16,7 +16,7 @@ import ContactSection from '@/components/Home/ContactSection';
 
 // Define types for our data
 
-
+export const runtime = "edge";
 
 
 export default function Home() {
