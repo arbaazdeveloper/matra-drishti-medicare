@@ -36,15 +36,15 @@ const Banner = () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center text-white">
+        <div className="mt-4 max-w-6xl mx-auto text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-6"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-             Welcome to <span className="text-teal-400">Matra Drishti Medicare </span>Multispeciality Hospital, Lucknow 
+            <h1 className="pt-1.5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+             Welcome to <span className="text-teal-400">Matra Drishti Medicare </span>Hospital, Lucknow 
             </h1>
           </motion.div>
 
@@ -54,7 +54,7 @@ const Banner = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-8"
           >
-            <h2 className="text-lg md:text-xl lg:text-2xl font-medium">
+            <h2 className="text-md md:text-xl lg:text-2xl font-medium">
             Compassionate care with advanced medical facilities. From expert doctors to quick appointments and 24x7 emergency services, we are here to hear and heal your health problems.
             </h2>
           </motion.div>
