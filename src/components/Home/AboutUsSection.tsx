@@ -1,27 +1,9 @@
-import { motion,Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 
-const AboutUsSection = () => {
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('about-section');
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        setIsInView(rect.top < window.innerHeight - 100);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+const AboutSection = () => {
   // Animation variants
-  const containerVariants :Variants= {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -31,8 +13,8 @@ const AboutUsSection = () => {
     }
   };
 
-  const itemVariants  :Variants= {
-    hidden: { y: 20, opacity: 0 },
+  const itemVariants :Variants= {
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -43,10 +25,10 @@ const AboutUsSection = () => {
     }
   };
 
-  const imageVariants  :Variants = {
-    hidden: { x: -50, opacity: 0 },
+  const imageVariants :Variants= {
+    hidden: { scale: 0.9, opacity: 0 },
     visible: {
-      x: 0,
+      scale: 1,
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -55,112 +37,196 @@ const AboutUsSection = () => {
     }
   };
 
-  const stats = [
-    { value: "25+", label: "Years of Experience" },
-    { value: "140+", label: "Specialist Doctors" },
-    { value: "10k+", label: "Happy Patients" },
-    { value: "24/7", label: "Emergency Services" }
+  // Features data
+  const features = [
+    {
+      title: "Patient-Centered Care",
+      description: "We prioritize your comfort and well-being with personalized treatment plans.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      ),
+      color: "text-pink-600",
+      bgColor: "bg-pink-100"
+    },
+    {
+      title: "Advanced Technology",
+      description: "State-of-the-art equipment for accurate diagnostics and effective treatments.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      ),
+      color: "text-purple-600",
+      bgColor: "bg-purple-100"
+    },
+    {
+      title: "Expert Team",
+      description: "Highly qualified medical professionals with years of experience in women's health.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      color: "text-teal-600",
+      bgColor: "bg-teal-100"
+    }
   ];
 
   return (
-    <section id="about-section" className="py-16 bg-white">
+    <section id="about" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-pink-600 font-semibold uppercase tracking-wider">About Us</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2 playfair-font">Comprehensive Women's Healthcare</h2>
+          <div className="w-24 h-1 bg-pink-500 mx-auto mt-4"></div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Image Section */}
           <motion.div
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={imageVariants}
             className="relative"
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                alt="Medical team at Matra Drishti Medicare Hospital"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-blue-900/20"></div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              {/* Replace with actual hospital image */}
+              <div className="w-full h-80 md:h-96 bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center rounded-2xl">
+                <div className="text-center text-white p-8">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  <h3 className="text-2xl font-bold mb-2">Modern Healthcare Facility</h3>
+                  <p className="opacity-90">State-of-the-art equipment and comfortable environment</p>
+                </div>
+              </div>
             </div>
-            
-            {/* Floating experience badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-teal-500 text-white p-6 rounded-2xl shadow-lg"
-            >
-              <span className="block text-4xl font-bold">25+</span>
-              <span className="block text-sm">Years Experience</span>
-            </motion.div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500 rounded-full opacity-20"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-purple-500 rounded-full opacity-20"></div>
           </motion.div>
 
           {/* Content Section */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            <motion.div variants={itemVariants} className="mb-4">
-              <span className="text-teal-500 font-semibold">About Matra drishti Medicare</span>
-            </motion.div>
-            
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Providing Quality Healthcare with Compassion
-            </motion.h2>
-            
-            <motion.p variants={itemVariants} className="text-gray-600 text-lg mb-6">
-              At Matra drishti Medicare, we believe that everyone deserves access to exceptional healthcare. 
-              For over 25 years, we have been committed to delivering comprehensive medical 
-              services with the highest standards of quality and compassion.
-            </motion.p>
-            
-            <motion.p variants={itemVariants} className="text-gray-600 text-lg mb-8">
-              Our state-of-the-art facilities and team of experienced healthcare professionals 
-              work together to ensure that our patients receive personalized care tailored to 
-              their unique needs. We combine cutting-edge technology with a human touch to 
-              provide the best possible outcomes.
-            </motion.p>
-
-            {/* Stats Grid */}
-            <motion.div 
+            <motion.h3 
+              className="text-2xl font-bold text-gray-800 mb-6"
               variants={itemVariants}
-              className="grid grid-cols-2 gap-6 mb-8"
             >
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  className="text-center p-4 bg-blue-50 rounded-lg"
-                  whileHover={{ 
-                    scale: 1.05,
-                    backgroundColor: "rgba(99, 179, 237, 0.1)"
-                  }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="text-2xl font-bold text-teal-600">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div 
+              Welcome to Our Clinic
+            </motion.h3>
+            <motion.p 
+              className="text-gray-700 mb-6 leading-relaxed"
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
-                Learn More About Us
-              </button>
-              <button className="bg-transparent border-2 border-teal-500 text-teal-500 hover:bg-teal-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
-                Meet Our Team
-              </button>
+              At our gynecology clinic, we are dedicated to providing exceptional healthcare services for women at every stage of life. Our team of experienced professionals combines medical expertise with compassionate care to ensure the best possible outcomes for our patients.
+            </motion.p>
+            <motion.p 
+              className="text-gray-700 mb-8 leading-relaxed"
+              variants={itemVariants}
+            >
+              We believe in a holistic approach to women's health, addressing not just physical concerns but also emotional and psychological well-being. Our state-of-the-art facility is equipped with the latest technology to provide accurate diagnoses and effective treatments in a comfortable environment.
+            </motion.p>
+            <motion.div 
+              className="flex flex-wrap gap-4 mb-8"
+              variants={itemVariants}
+            >
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
+                <span className="text-gray-700">Comprehensive gynecological care</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
+                <span className="text-gray-700">Advanced diagnostic services</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
+                <span className="text-gray-700">Personalized treatment plans</span>
+              </div>
             </motion.div>
+            <motion.button 
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More About Our Services
+            </motion.button>
           </motion.div>
         </div>
+
+        {/* Features Section */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+            >
+              <div className={`w-16 h-16 ${feature.bgColor} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                <span className={feature.color}>{feature.icon}</span>
+              </div>
+              <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">{feature.title}</h3>
+              <p className="text-gray-600 text-center">{feature.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div 
+          className="mt-16 bg-white rounded-2xl shadow-lg p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-pink-600 mb-2">15+</div>
+              <div className="text-gray-600">Years of Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">5000+</div>
+              <div className="text-gray-600">Happy Patients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-teal-600 mb-2">24/7</div>
+              <div className="text-gray-600">Emergency Care</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">100%</div>
+              <div className="text-gray-600">Patient Satisfaction</div>
+            </div>
+          </div>
+        </motion.div>
       </div>
+
+      <style jsx global>{`
+        .playfair-font {
+          font-family: 'Playfair Display', serif;
+        }
+      `}</style>
     </section>
   );
 };
 
-export default AboutUsSection;
+export default AboutSection;

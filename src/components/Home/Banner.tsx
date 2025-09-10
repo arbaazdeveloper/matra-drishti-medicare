@@ -1,141 +1,208 @@
-"use client"
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const Banner = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
+    setIsMounted(true);
   }, []);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants : Variants= {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const imageVariants :Variants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-          alt="Modern hospital facility"
-          layout="fill"
-          objectFit="cover"
-          priority
-          className="brightness-75"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-teal-800/70 mix-blend-multiply"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="mt-4 max-w-6xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 flex flex-col overflow-hidden">
+      {/* Hero Content */}
+      <div className="flex-1 flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-0">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center py-6">
+          {/* Left Content */}
+          <motion.div 
+            className="text-center md:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isMounted ? "visible" : "hidden"}
           >
-            <h1 className="pt-1.5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-             Welcome to <span className="text-teal-400">Matra Drishti Medicare </span>Hospital, Lucknow 
-            </h1>
+            <motion.h1 
+              className="text-3xl md:text-4xl lg:text-6xl font-bold text-purple-900 mb-6 playfair-font leading-tight"
+              variants={itemVariants}
+            >
+              Your Health, Our Priority – Hospital & Clinic Care in Lucknow
+            </motion.h1>
+            
+            <motion.h2 
+              className="text-xl text-purple-700 mb-8 max-w-md mx-auto md:mx-0"
+              variants={itemVariants}
+            >
+             Matra Drishti Medicare provides trusted healthcare, advanced treatments, and patient-first medical services in Lucknow
+            </motion.h2>
+            
+            <motion.div 
+              className="mb-10"
+              variants={itemVariants}
+            >
+              <h2 className="text-2xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
+              <p className="text-lg text-pink-600">Gynecologist & Pregnancy Specialist</p>
+            </motion.div>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              variants={itemVariants}
+            >
+              <motion.button 
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Book an Appointment
+              </motion.button>
+              <motion.button 
+                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 font-semibold py-4 px-8 rounded-full transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Doctor Profile
+              </motion.button>
+            </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-8"
+          {/* Right Content - Image/Illustration */}
+          <motion.div 
+            className="relative"
+            variants={imageVariants}
+            initial="hidden"
+            animate={isMounted ? "visible" : "hidden"}
+            transition={{ delay: 0.5 }}
           >
-            <h2 className="text-md md:text-xl lg:text-2xl font-medium">
-            Compassionate care with advanced medical facilities. From expert doctors to quick appointments and 24x7 emergency services, we are here to hear and heal your health problems.
-            </h2>
+            <div className="relative h-80 md:h-96 lg:h-[500px] w-full">
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-pink-400 to-purple-400 rounded-2xl shadow-2xl transform rotate-3"
+                animate={{ rotate: 3 }}
+                transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+              />
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-300 rounded-2xl shadow-xl -rotate-2"
+                animate={{ rotate: -2 }}
+                transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+              />
+              <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center p-8 shadow-lg">
+                <div className="text-center">
+                  <motion.div 
+                    className="mb-6"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">Comprehensive Women's Healthcare</h3>
+                  <p className="text-purple-700 mb-6">Expert care for every stage of a woman's life journey</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <motion.div 
+                      className="bg-pink-50 p-2 md:p-3 rounded-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-sm mt-1">Pregnancy Care</p>
+                    </motion.div>
+                    <motion.div 
+                      className="bg-purple-50 p-2 md:p-3 rounded-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-sm mt-1">Gynecological Health</p>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-10"
-          >
-            <p className="text-sm md:text-xl max-w-3xl mx-auto">
-              Expert Care | Quick Appointments | Hassle-Free Healthcare | Trusted by Families in Lucknow
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
-          >
-            <button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Book Appointment
-            </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300">
-              Emergency Care
-            </button>
-          </motion.div>
-
-         
         </div>
       </div>
 
-      {/* Animated elements */}
-      {!isMobile && (
-        <>
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 0.2, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="absolute top-1/4 left-10 text-white/20 text-8xl z-0"
-          >
-            ❤
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 0.2, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.7 }}
-            className="absolute bottom-1/4 right-10 text-white/20 text-8xl z-0"
-          >
-            ⚕
-          </motion.div>
-        </>
-      )}
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      {/* Contact Info */}
+      <motion.div 
+        className="bg-white py-6 border-t border-purple-100"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isMounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ delay: 0.8 }}
       >
-        <div className="animate-bounce flex flex-col items-center">
-          <p className="text-white text-sm mb-2">Scroll Down</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center visible md:hidden">
+          <div className="flex items-center mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span className="text-purple-700">helpdesk@matradristi.com</span>
+          </div>
+          <div className="flex items-center mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span className="text-purple-700">7499931560</span>
+          </div>
+          <motion.button 
+            className="text-pink-500 hover:text-pink-600 font-medium flex items-center"
+            whileHover={{ scale: 1.05 }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+            Ask a Question
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+          </motion.button>
         </div>
       </motion.div>
-    </section>
+
+      {/* Scroll Indicator */}
+    
+
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+        .playfair-font {
+          font-family: 'Playfair Display', serif;
+        }
+        body {
+          font-family: 'Montserrat', sans-serif;
+        }
+      `}</style>
+    </div>
   );
 };
 

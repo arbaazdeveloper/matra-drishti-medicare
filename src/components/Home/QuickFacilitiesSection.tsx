@@ -117,7 +117,7 @@ const QuickFacilitiesSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -bottom-6 -right-6 bg-teal-500 text-white p-6 rounded-2xl shadow-lg"
+              className="absolute -bottom-6 -right-6 bg-pink-500 text-white p-6 rounded-2xl shadow-lg"
             >
               <span className="block text-2xl font-bold">Luxury</span>
               <span className="block text-sm">Maternity Suites</span>
@@ -131,7 +131,7 @@ const QuickFacilitiesSection = () => {
             animate={isInView ? "visible" : "hidden"}
           >
             <motion.div variants={itemVariants} className="mb-4">
-              <span className="text-teal-500 font-semibold">Premium Facility</span>
+              <span className="text-pink-500 font-semibold">Premium Facility</span>
             </motion.div>
             
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
@@ -155,8 +155,8 @@ const QuickFacilitiesSection = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="bg-teal-100 p-2 rounded-full mr-4">
-                    <div className="text-teal-500">
+                  <div className="bg-pink-100 p-2 rounded-full mr-4">
+                    <div className="text-pink-500">
                       {feature.icon}
                     </div>
                   </div>
@@ -170,10 +170,10 @@ const QuickFacilitiesSection = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
+              <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
                 Explore More Facilities
               </button>
-              <button className="bg-transparent border-2 border-teal-500 text-teal-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <button className="bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                 Learn More
               </button>
             </motion.div>
