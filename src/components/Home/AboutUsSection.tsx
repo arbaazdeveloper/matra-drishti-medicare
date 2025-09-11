@@ -101,13 +101,14 @@ const AboutSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               {/* Replace with actual hospital image */}
               <div className="w-full h-80 md:h-96 bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center rounded-2xl">
-                <div className="text-center text-white p-8">
+              <Image alt='hospital' className='w-full h-full' width={100} height={100} src={'https://lh3.googleusercontent.com/p/AF1QipMi-JQrzu1aHc_qy9OsDJO5FL3HwkSgnvqlWJBb=s1360-w1360-h1020-rw'}/>
+                {/* <div className="text-center text-white p-8">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                   <h3 className="text-2xl font-bold mb-2">Modern Healthcare Facility</h3>
                   <p className="opacity-90">State-of-the-art equipment and comfortable environment</p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500 rounded-full opacity-20"></div>

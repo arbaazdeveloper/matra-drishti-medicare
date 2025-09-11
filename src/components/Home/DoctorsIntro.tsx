@@ -29,7 +29,7 @@ const DoctorsIntroduction = () => {
     {
       name: "DR. AMITA GUPTA",
       title: "Gynecologist & Pregnancy Specialist",
-      description: "An experienced Obstetrician and Gynecologist with years in women's healthcare, specializing in obstetrics, gynecology, and gynecological endoscopy. With numerous successful deliveries, Dr. Varshali has worked at leading hospitals in Pune, including Surya Mother and Child Care and Deemmath Mangeshkar Hospital, providing exceptional maternal care and gynecological expertise.",
+      description: "An experienced Obstetrician and Gynecologist with years in women's healthcare, specializing in obstetrics, gynecology, and gynecological endoscopy. With numerous successful deliveries, Dr. Amita has worked at leading organizations in Lucknow, including Surya Mother and Child Care and Apollo hospital, providing exceptional maternal care and gynecological expertise.",
       image: "/doctor-1.jpg", // Replace with actual image path
       specialties: ["Obstetrics", "Gynecology", "Gynecological Endoscopy", "Pregnancy Care"],
       experience: "15+ Years",

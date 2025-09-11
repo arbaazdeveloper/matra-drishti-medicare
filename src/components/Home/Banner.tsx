@@ -129,17 +129,17 @@ const Banner = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">Comprehensive Women's Healthcare</h3>
-                  <p className="text-purple-700 mb-6">Expert care for every stage of a woman's life journey</p>
+                  <h3 className="text-md md:text-2xl font-bold text-purple-900 mb-4">Comprehensive Women's Healthcare</h3>
+                  <p className="text-purple-700 mb-6 text-sm md:text-md">Expert care for every stage of a woman's life journey</p>
                   <div className="grid grid-cols-2 gap-4">
                     <motion.div 
-                      className="bg-pink-50 p-2 md:p-3 rounded-lg"
+                      className="bg-pink-50 p-1 md:p-3 rounded-lg"
                       whileHover={{ scale: 1.05 }}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <p className="text-sm mt-1">Pregnancy Care</p>
+                      <p className="text-xs md:text-sm mt-1">Pregnancy Care</p>
                     </motion.div>
                     <motion.div 
                       className="bg-purple-50 p-2 md:p-3 rounded-lg"
@@ -148,7 +148,7 @@ const Banner = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <p className="text-sm mt-1">Gynecological Health</p>
+                      <p className="text-xs md:text-sm mt-1">Gynecological Health</p>
                     </motion.div>
                   </div>
                 </div>
