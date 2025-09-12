@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const DoctorsIntroduction = () => {
   // Animation variants
@@ -116,6 +117,8 @@ const DoctorsIntroduction = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href={'/appointment'}>
+                  
                   <motion.button 
                     className={`flex-1 ${index === 0 ? 'bg-pink-500 hover:bg-pink-600' : 'bg-purple-500 hover:bg-purple-600'} text-white font-medium py-3 px-6 rounded-lg transition-colors`}
                     whileHover={{ scale: 1.02 }}
@@ -123,6 +126,9 @@ const DoctorsIntroduction = () => {
                   >
                     Book an Appointment
                   </motion.button>
+                  </Link>
+                  <Link href={'/doctors'}>
+                  
                   <motion.button 
                     className="flex-1 border-2 border-gray-300 hover:border-pink-500 text-gray-700 hover:text-pink-600 font-medium py-3 px-6 rounded-lg transition-colors"
                     whileHover={{ scale: 1.02 }}
@@ -130,6 +136,7 @@ const DoctorsIntroduction = () => {
                   >
                     View Full Profile
                   </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

@@ -22,12 +22,13 @@ const Navbaar = () => {
   };
 
   const navItems = [
-    { name: 'LEARN', href: '#learn' },
+    { name: 'LEARN', href: '/learn' },
     { name: 'CARE', href: '/care' },
     { name: 'DOCTOR', href: '/doctors' },
     { name: 'REVIEWS', href: '#reviews' },
     { name: 'ABOUT', href: '/about' },
-    { name: 'BLOG', href: '#blog' },
+    { name: 'BLOG', href: '/blogs' },
+    { name: 'CONTACT', href: '/contact' },
   ];
 
   const sidebarVariants :Variants= {
@@ -93,9 +94,9 @@ const Navbaar = () => {
                 </svg>
                 <span className="text-purple-700 text-sm">8007442266</span>
               </div> */}
-              <button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg">
+              <Link href='/appointment' className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg">
                 Book Appointment
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -189,8 +190,10 @@ const Navbaar = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <span className="text-purple-700">7499931560</span>
+                    <span className="text-purple-700">+917499931560</span>
                   </div>
+                  <Link href={'/appointment'}>
+                  
                   <motion.button 
                     className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg"
                     whileHover={{ scale: 1.02 }}
@@ -199,6 +202,7 @@ const Navbaar = () => {
                   >
                     Book Appointment
                   </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

@@ -218,12 +218,12 @@ const DoctorsPage = () => {
                       transition={{ duration: 0.5, delay: i * 0.1 }}
                     >
                       <div className="flex items-start">
-                        <div className="bg-pink-100 text-pink-600 font-semibold py-1 px-3 rounded-full text-sm mr-4">
+                        <div className="bg-pink-100 text-pink-600 font-semibold py-1 px-3 rounded-full text-[0.50rem] text-nowrap md:text-sm mr-4">
                           {edu.year}
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-800">{edu.degree}</h4>
-                          <p className="text-gray-600 mt-1">{edu.institution}</p>
+                          <h4 className="text-sm md:text-lg  font-semibold text-gray-800">{edu.degree}</h4>
+                          <p className="text-gray-600 mt-1 text-sm md:text-lg">{edu.institution}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -256,12 +256,12 @@ const DoctorsPage = () => {
                       transition={{ duration: 0.5, delay: i * 0.1 }}
                     >
                       <div className="flex items-start">
-                        <div className="bg-purple-100 text-purple-600 font-semibold py-1 px-3 rounded-full text-sm mr-4">
+                        <div className="bg-purple-100 text-purple-600 font-semibold py-1 px-2 md:px-3 rounded-full text-[0.50rem] text-nowrap md:text-sm mr-4">
                           {exp.year}
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-800">{exp.position}</h4>
-                          <p className="text-gray-600 mt-1">{exp.hospital}</p>
+                          <h4 className="text-sm md:text-lg font-semibold text-gray-800">{exp.position}</h4>
+                          <p className="text-gray-600 mt-1 text-sm md:text-lg">{exp.hospital}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -334,6 +334,7 @@ const DoctorsPage = () => {
       ))}
 
       <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
         .playfair-font {
           font-family: 'Playfair Display', serif;
         }

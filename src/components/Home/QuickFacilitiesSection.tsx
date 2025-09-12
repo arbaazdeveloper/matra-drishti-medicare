@@ -1,5 +1,6 @@
 import { motion , Variants} from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const QuickFacilitiesSection = () => {
@@ -173,9 +174,9 @@ const QuickFacilitiesSection = () => {
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
                 Explore More Facilities
               </button>
-              <button className="bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <Link href={'/care'} className="bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                 Learn More
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

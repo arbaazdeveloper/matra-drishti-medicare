@@ -88,7 +88,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-purple-700">Our Services</h3>
             <ul className="space-y-3">
-              {['Pregnancy Care', 'Gynecology', 'Fertility Treatments', 'Ultrasound', 'Menopause Care', 'Well Woman Checkup'].map((service) => (
+              {['Pregnancy Care', 'Gynecology', 'Fertility Treatments',  'Menopause Care', 'Well Woman Checkup','Eye Care'].map((service) => (
                 <li key={service}>
                   <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

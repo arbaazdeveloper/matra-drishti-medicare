@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
   title: "Matra drishti Medicare Hospital | Expert Doctors in Lucknow",
-  metadataBase:new URL('https://matra-drishti-medicare.arbaazuniquegzp.workers.dev/'),
+  metadataBase: new URL('https://matra-drishti-medicare.arbaazuniquegzp.workers.dev/'),
   description:
     "Matra drishti Medicare Hospital in Lucknow offers 24x7 emergency care, expert doctors, modern facilities, and hassle-free appointments.",
   keywords: [
@@ -60,11 +60,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TopHeaderBar/>
-        <Navbar/>
-        {children}
-        <Footer/>
-        <WhatsAppButton/>
+        <TopHeaderBar />
+        <Navbar />
+        <div className="overflow-x-hidden">
+
+          {children}
+        </div>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

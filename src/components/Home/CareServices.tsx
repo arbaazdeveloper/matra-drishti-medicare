@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const CareServices = () => {
   // Animation variants
@@ -90,12 +91,12 @@ const CareServices = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <button className="text-pink-500 hover:text-pink-600 font-medium text-sm flex items-center">
+              <Link href={`/care?service=${service.title}`} className="text-pink-500 hover:text-pink-600 font-medium text-sm flex items-center">
                 Learn more
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -108,6 +109,8 @@ const CareServices = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
+          <Link href={'/care'}>
+          
           <motion.button 
             className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
             whileHover={{ scale: 1.05 }}
@@ -115,6 +118,7 @@ const CareServices = () => {
           >
             View All Services
           </motion.button>
+          </Link>
         </motion.div>
       </div>
 

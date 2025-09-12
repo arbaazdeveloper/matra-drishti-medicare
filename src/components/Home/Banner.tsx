@@ -3,6 +3,16 @@ import { useState, useEffect } from 'react';
 
 const Banner = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const phoneNumber = "+917499931560"; // Replace with your actual number
+  const message = "I Want to book an Appoint DR.Amita Gupta";
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+
+
+  const handleClick = () => {
+    window.open(whatsappURL, '_blank');
+  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -69,34 +79,80 @@ const Banner = () => {
             >
              Matra Drishti Medicare provides trusted healthcare, advanced treatments, and patient-first medical services in Lucknow
             </motion.h2>
-            
+            <div className='flex gap-1'>
+
+            <div>
+
+           
             <motion.div 
               className="mb-10"
               variants={itemVariants}
-            >
-              <h2 className="text-2xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
-              <p className="text-lg text-pink-600">Gynecologist & Pregnancy Specialist</p>
+              >
+              <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
+              <p className="text-sm text-pink-600">Gynecologist & Pregnancy Specialist</p>
             </motion.div>
             
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               variants={itemVariants}
-            >
+              >
+                <div className='flex flex-col justify-center items-center gap-1'>
               <motion.button 
-                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-pink-500 hover:bg-pink-600 text-white text-xs md:text-sm font-semibold py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-              >
+                onClick={handleClick}
+                >
                 Book an Appointment
               </motion.button>
               <motion.button 
-                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 font-semibold py-4 px-8 rounded-full transition-all duration-300"
+                className="border-2 border-pink-500 text-pink-600 w-full hover:bg-pink-50 font-semibold text-xs md:text-sm  text-sm py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+          
               >
                 View Doctor Profile
               </motion.button>
+              </div>
             </motion.div>
+             </div>
+               <div>
+
+           
+            <motion.div 
+              className="mb-10"
+              variants={itemVariants}
+              >
+              <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
+              <p className="text-sm text-pink-600">Gynecologist & Pregnancy Specialist</p>
+            </motion.div>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              variants={itemVariants}
+              >
+                <div className='flex flex-col justify-center items-center gap-1'>
+
+             <motion.button 
+                className="bg-pink-500 hover:bg-pink-600 text-white text-xs md:text-sm font-semibold py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleClick}
+                >
+                Book an Appointment
+              </motion.button>
+              <motion.button 
+                className="border-2 border-pink-500 text-pink-600 w-full hover:bg-pink-50 font-semibold text-xs md:text-sm  text-sm py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+          
+              >
+                View Doctor Profile
+              </motion.button>
+                </div>
+            </motion.div>
+             </div>
+            </div>
           </motion.div>
 
           {/* Right Content - Image/Illustration */}
@@ -148,7 +204,7 @@ const Banner = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <p className="text-xs md:text-sm mt-1">Gynecological Health</p>
+                      <p className="text-xs md:text-sm mt-1">Eye Care</p>
                     </motion.div>
                   </div>
                 </div>

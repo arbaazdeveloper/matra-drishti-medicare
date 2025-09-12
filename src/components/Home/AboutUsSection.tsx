@@ -1,9 +1,10 @@
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutSection = () => {
   // Animation variants
-  const containerVariants:Variants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +14,7 @@ const AboutSection = () => {
     }
   };
 
-  const itemVariants :Variants= {
+  const itemVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
@@ -25,7 +26,7 @@ const AboutSection = () => {
     }
   };
 
-  const imageVariants :Variants= {
+  const imageVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: {
       scale: 1,
@@ -77,7 +78,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +102,7 @@ const AboutSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               {/* Replace with actual hospital image */}
               <div className="w-full h-80 md:h-96 bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center rounded-2xl">
-              <Image alt='hospital' className='w-full h-full' width={100} height={100} src={'https://lh3.googleusercontent.com/p/AF1QipMi-JQrzu1aHc_qy9OsDJO5FL3HwkSgnvqlWJBb=s1360-w1360-h1020-rw'}/>
+                <Image alt='hospital' className='w-full h-full' width={100} height={100} src={'https://lh3.googleusercontent.com/p/AF1QipMi-JQrzu1aHc_qy9OsDJO5FL3HwkSgnvqlWJBb=s1360-w1360-h1020-rw'} />
                 {/* <div className="text-center text-white p-8">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -122,25 +123,25 @@ const AboutSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-bold text-gray-800 mb-6"
               variants={itemVariants}
             >
               Welcome to Our Clinic
             </motion.h3>
-            <motion.p 
+            <motion.p
               className="text-gray-700 mb-6 leading-relaxed"
               variants={itemVariants}
             >
               At our gynecology clinic, we are dedicated to providing exceptional healthcare services for women at every stage of life. Our team of experienced professionals combines medical expertise with compassionate care to ensure the best possible outcomes for our patients.
             </motion.p>
-            <motion.p 
+            <motion.p
               className="text-gray-700 mb-8 leading-relaxed"
               variants={itemVariants}
             >
               We believe in a holistic approach to women's health, addressing not just physical concerns but also emotional and psychological well-being. Our state-of-the-art facility is equipped with the latest technology to provide accurate diagnoses and effective treatments in a comfortable environment.
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex flex-wrap gap-4 mb-8"
               variants={itemVariants}
             >
@@ -157,14 +158,17 @@ const AboutSection = () => {
                 <span className="text-gray-700">Personalized treatment plans</span>
               </div>
             </motion.div>
-            <motion.button 
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More About Our Services
-            </motion.button>
+            <Link href={'/care'}>
+
+              <motion.button
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More About Our Services
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
@@ -193,7 +197,7 @@ const AboutSection = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div 
+        <motion.div
           className="mt-16 bg-white rounded-2xl shadow-lg p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -171,13 +171,15 @@ const TestimonialsSection = () => {
             <p className="text-pink-100 mb-6 max-w-2xl mx-auto">
               Your feedback helps us improve our services and helps other patients make informed decisions about their healthcare.
             </p>
-            <motion.button 
+            <motion.a 
+            target='_blank'
+            href='https://g.page/r/Cf-54VOjWOUwEAI/review'
               className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Drop a Review
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>

@@ -1,11 +1,23 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from "next/navigation";
 import Image from 'next/image';
 
 const CarePage = () => {
   const [activeTab, setActiveTab] = useState('gynecology');
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
+    const searchParams = useSearchParams();
+
+    const search = searchParams.get("service");
+
+    useEffect(()=>{
+     
+      if(search && search==='Eye Care'){
+        setActiveTab('eyeCare')
+      }
+    },[])
+
 
   const toggleItem = (id: string) => {
     setOpenItems(prev => ({
@@ -509,6 +521,7 @@ const CarePage = () => {
       </section>
 
       <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
         .playfair-font {
           font-family: 'Playfair Display', serif;
         }
