@@ -127,19 +127,19 @@ const AboutSection = () => {
               className="text-2xl font-bold text-gray-800 mb-6"
               variants={itemVariants}
             >
-              Welcome to Our Clinic
+              Welcome to Our Hospital
             </motion.h3>
             <motion.p
               className="text-gray-700 mb-6 leading-relaxed"
               variants={itemVariants}
             >
-              At our gynecology clinic, we are dedicated to providing exceptional healthcare services for women at every stage of life. Our team of experienced professionals combines medical expertise with compassionate care to ensure the best possible outcomes for our patients.
+           Matra Dristi Medicare, Lucknow was established in 2011 with a vision to provide advanced healthcare with compassion and care. With a bed capacity of 45 and a dedicated team of 15 skilled staff members, the hospital is committed to delivering quality treatment across multiple specialties.
             </motion.p>
             <motion.p
               className="text-gray-700 mb-8 leading-relaxed"
               variants={itemVariants}
             >
-              We believe in a holistic approach to women's health, addressing not just physical concerns but also emotional and psychological well-being. Our state-of-the-art facility is equipped with the latest technology to provide accurate diagnoses and effective treatments in a comfortable environment.
+ Our services include Gynecology, Ophthalmology, Cardiology, DNB, and General Surgeries, ensuring comprehensive care for patients. We specialize in Gynecological surgeries, Ophthalmic surgeries, Cardiology OPD, and a wide range of General Surgeries, supported by modern facilities and expert doctors. At Matra Dristi Medicare, we strive to combine advanced medical technology with patient-centric care, making us a trusted healthcare destination in Lucknow.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-4 mb-8"
@@ -147,15 +147,15 @@ const AboutSection = () => {
             >
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
-                <span className="text-gray-700">Comprehensive gynecological care</span>
+                <span className="text-gray-700">Eye examination with advanced machines.</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
-                <span className="text-gray-700">Advanced diagnostic services</span>
+                <span className="text-gray-700">Infertility diagnosis and treatment.</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
-                <span className="text-gray-700">Personalized treatment plans</span>
+                <span className="text-gray-700">Uterus cancer screening and vaccination through Colposcopy.</span>
               </div>
             </motion.div>
             <Link href={'/care'}>
