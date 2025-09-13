@@ -133,13 +133,13 @@ const AboutSection = () => {
               className="text-gray-700 mb-6 leading-relaxed"
               variants={itemVariants}
             >
-           Matra Dristi Medicare, Lucknow was established in 2011 with a vision to provide advanced healthcare with compassion and care. With a bed capacity of 45 and a dedicated team of 15 skilled staff members, the hospital is committed to delivering quality treatment across multiple specialties.
+           Matra Drishti Medicare, Lucknow was established in 2011 with a vision to provide advanced healthcare with compassion and care. With a bed capacity of 45 and a dedicated team of 15 skilled staff members, the hospital is committed to delivering quality treatment across multiple specialties.
             </motion.p>
             <motion.p
               className="text-gray-700 mb-8 leading-relaxed"
               variants={itemVariants}
             >
- Our services include Gynecology, Ophthalmology, Cardiology, DNB, and General Surgeries, ensuring comprehensive care for patients. We specialize in Gynecological surgeries, Ophthalmic surgeries, Cardiology OPD, and a wide range of General Surgeries, supported by modern facilities and expert doctors. At Matra Dristi Medicare, we strive to combine advanced medical technology with patient-centric care, making us a trusted healthcare destination in Lucknow.
+ Our services include Gynecology, Ophthalmology, Cardiology, DNB, and General Surgeries, ensuring comprehensive care for patients. We specialize in Gynecological surgeries, Ophthalmic surgeries, Cardiology OPD, and a wide range of General Surgeries, supported by modern facilities and expert doctors. At Matra Drishti Medicare, we strive to combine advanced medical technology with patient-centric care, making us a trusted healthcare destination in Lucknow.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-4 mb-8"

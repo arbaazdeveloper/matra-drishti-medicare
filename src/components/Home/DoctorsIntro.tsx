@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const DoctorsIntroduction = () => {
   // Animation variants
-  const containerVariants :Variants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +13,7 @@ const DoctorsIntroduction = () => {
     }
   };
 
-  const itemVariants :Variants = {
+  const itemVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
@@ -29,32 +29,34 @@ const DoctorsIntroduction = () => {
   const doctors = [
     {
       name: "DR. AMITA GUPTA",
-      title: "Gynecologist & Pregnancy Specialist",
-      description: "An experienced Obstetrician and Gynecologist with years in women's healthcare, specializing in obstetrics, gynecology, and gynecological endoscopy. With numerous successful deliveries, Dr. Amita has worked at leading organizations in Lucknow, including Surya Mother and Child Care and Apollo hospital, providing exceptional maternal care and gynecological expertise.",
+      title: "Gynecologist & Infertility Specialist",
+      description: "Dr. Amita Gupta, MBBS, DGO (K.G.M.C), and Diploma in Urogynecology (Germany), is a highly experienced gynecologist specializing in infertility management, hysteroscopy, and laparoscopic procedures. With over 15 years of expertise, she has successfully treated numerous complex cases and provided compassionate care to women at every stage of life. She has also served as a Senior Consultant for Women's Health at Fatima Hospital, Lucknow, where she earned a reputation for excellence in maternal and reproductive healthcare.",
       image: "/doctor-1.jpg", // Replace with actual image path
-      specialties: ["Obstetrics", "Gynecology", "Gynecological Endoscopy", "Pregnancy Care"],
+      specialties: ["Infertility Treatment", "Hysteroscopy", "Laparoscopic Gynecology", "Women's Health"],
       experience: "15+ Years",
       color: "bg-pink-50",
       borderColor: "border-pink-200",
-      textColor: "text-pink-600"
+      textColor: "text-pink-600",
+      profile:'/doctors/dr-amita-gupta'
     },
     {
-      name: "DR. RAJESH KUMAR",
-      title: "Senior Gynecologist & IVF Specialist",
-      description: "A renowned gynecologist with expertise in infertility treatments and IVF procedures. Dr. Kumar has helped hundreds of couples achieve successful pregnancies through advanced reproductive techniques. With extensive experience in high-risk pregnancies and minimally invasive surgeries, he is committed to providing compassionate care to all his patients.",
-      image: "/doctor-2.jpg", // Replace with actual image path
-      specialties: ["IVF Treatments", "Infertility", "High-Risk Pregnancies", "Minimally Invasive Surgery"],
-      experience: "18+ Years",
+      name: "DR. Rajesh Gupta",
+      title: "Senior Eye Surgeon",
+      description: "Dr. Rajesh Gupta, MBBS, DOMS, FCLI, is a highly experienced ophthalmologist and the founder of Matra Drishti Medicare. With over 15 years of dedicated service, he has successfully performed more than 10,000 eye surgeries. Having previously served as an Eye Surgeon at Sitapur Eye Hospital and as a Fellow at S.N.C Chitrakoot, Dr. Gupta brings unparalleled expertise in cataract, refractive, and other advanced ophthalmic procedures. He is committed to providing world-class eye care with precision and compassion.",
+      image: "/doctor-1.jpg", // Replace with actual image path
+      specialties: ["Cataract Surgery", "Refractive Surgery", "Advanced Ophthalmic Procedures", "Comprehensive Eye Care"],
+      experience: "15+ Years",
       color: "bg-purple-50",
       borderColor: "border-purple-200",
-      textColor: "text-purple-600"
+      textColor: "text-purple-600",
+       profile:'/doctors/dr-rajesh-gupta'
     }
   ];
 
   return (
     <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -118,24 +120,24 @@ const DoctorsIntroduction = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link href={'/appointment'}>
-                  
-                  <motion.button 
-                    className={`flex-1 ${index === 0 ? 'bg-pink-500 hover:bg-pink-600' : 'bg-purple-500 hover:bg-purple-600'} text-white font-medium py-3 px-6 rounded-lg transition-colors`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Book an Appointment
-                  </motion.button>
+
+                    <motion.button
+                      className={`flex-1 ${index === 0 ? 'bg-pink-500 hover:bg-pink-600' : 'bg-purple-500 hover:bg-purple-600'} text-white font-medium py-3 px-6 rounded-lg transition-colors`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Book an Appointment
+                    </motion.button>
                   </Link>
-                  <Link href={'/doctors'}>
-                  
-                  <motion.button 
-                    className="flex-1 border-2 border-gray-300 hover:border-pink-500 text-gray-700 hover:text-pink-600 font-medium py-3 px-6 rounded-lg transition-colors"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    View Full Profile
-                  </motion.button>
+                  <Link href={doctor.profile}>
+
+                    <motion.button
+                      className="flex-1 border-2 border-gray-300 hover:border-pink-500 text-gray-700 hover:text-pink-600 font-medium py-3 px-6 rounded-lg transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      View Full Profile
+                    </motion.button>
                   </Link>
                 </div>
               </div>
@@ -143,7 +145,7 @@ const DoctorsIntroduction = () => {
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="text-center mt-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -153,13 +155,17 @@ const DoctorsIntroduction = () => {
           <p className="text-purple-700 mb-6">
             Interested in meeting with our specialists? Schedule a consultation today.
           </p>
-          <motion.button 
+
+          <Link href={'/doctors'}>
+          
+          <motion.button
             className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Meet Our Entire Team
           </motion.button>
+          </Link>
         </motion.div>
       </div>
 

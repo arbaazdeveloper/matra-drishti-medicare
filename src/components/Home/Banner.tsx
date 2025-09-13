@@ -30,7 +30,7 @@ const Banner = () => {
     }
   };
 
-  const itemVariants : Variants= {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -42,7 +42,7 @@ const Banner = () => {
     }
   };
 
-  const imageVariants :Variants = {
+  const imageVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: {
       scale: 1,
@@ -60,26 +60,69 @@ const Banner = () => {
       <div className="flex-1 flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-0">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center py-6">
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             className="text-center md:text-left"
             variants={containerVariants}
             initial="hidden"
             animate={isMounted ? "visible" : "hidden"}
           >
-            <motion.h1 
+            <motion.h1
               className="text-3xl md:text-4xl lg:text-6xl font-bold text-purple-900 mb-6 playfair-font leading-tight"
               variants={itemVariants}
             >
               Your Health, Our Priority – Hospital & Clinic Care in Lucknow
             </motion.h1>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-xl text-purple-700 mb-8 max-w-md mx-auto md:mx-0"
               variants={itemVariants}
             >
-             Matra Drishti Medicare provides trusted healthcare, advanced treatments, and patient-first medical services in Lucknow
+              Matra Drishti Medicare provides trusted healthcare, advanced treatments, and patient-first medical services in Lucknow
             </motion.h2>
-            <div className='flex gap-1'>
+
+              <span className='text-xl playfair-font text-purple-800'>By</span>
+            <div className='flex justify-between'>
+              <div>
+                <motion.div
+                  className="mb-10"
+                  variants={itemVariants}
+                >
+                  <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
+                  <p className="text-xs text-pink-600 ">MBBS,DGO (K.G.M.C),Diploma in Urogynaecology (Germany) Specialist in infertilty/Hysteroscopy & Laproscopy</p>
+                </motion.div>
+              </div>
+              {/* <span className='text-xl playfair-font text-purple-800'>&</span> */}
+              <div>
+
+                <motion.div
+                  className="mb-10"
+                  variants={itemVariants}
+                >
+                  <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Rajesh Gupta</h2>
+                  <p className="text-xs text-pink-600 ">MBBS , DOMS,FCLI,Ex Eye surgeon (Sitapur Eye Hospital) , Fellow S.N.C Chitrakoot (Senior Eye surgeon)</p>
+                </motion.div>
+              </div>
+
+            </div>
+             <div className='flex justify-center md:flex-start  items-center gap-1'>
+              <motion.button 
+                className="bg-pink-500 hover:bg-pink-600 text-white text-xs md:text-sm font-semibold py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleClick}
+                >
+                Book an Appointment
+              </motion.button>
+              {/* <motion.button 
+                className="border-2 border-pink-500 text-pink-600 w-full hover:bg-pink-50 font-semibold text-xs md:text-sm  text-sm py-2 px-4 md:py-4 md:px-8  rounded-full transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+          
+              >
+                View Doctor Profile
+              </motion.button> */}
+              </div>
+            {/* <div className='flex gap-1'>
 
             <div>
 
@@ -152,11 +195,11 @@ const Banner = () => {
                 </div>
             </motion.div>
              </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Content - Image/Illustration */}
-          <motion.div 
+          <motion.div
             className="relative"
             variants={imageVariants}
             initial="hidden"
@@ -164,19 +207,19 @@ const Banner = () => {
             transition={{ delay: 0.5 }}
           >
             <div className="relative h-80 md:h-96 lg:h-[500px] w-full">
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-pink-400 to-purple-400 rounded-2xl shadow-2xl transform rotate-3"
                 animate={{ rotate: 3 }}
                 transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
               />
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-300 rounded-2xl shadow-xl -rotate-2"
                 animate={{ rotate: -2 }}
                 transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
               />
               <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center p-8 shadow-lg">
                 <div className="text-center">
-                  <motion.div 
+                  <motion.div
                     className="mb-6"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity }}
@@ -188,7 +231,7 @@ const Banner = () => {
                   <h3 className="text-md md:text-2xl font-bold text-purple-900 mb-4">Comprehensive Women's Healthcare</h3>
                   <p className="text-purple-700 mb-6 text-sm md:text-md">Expert care for every stage of a woman's life journey</p>
                   <div className="grid grid-cols-2 gap-4">
-                    <motion.div 
+                    <motion.div
                       className="bg-pink-50 p-1 md:p-3 rounded-lg"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -197,7 +240,7 @@ const Banner = () => {
                       </svg>
                       <p className="text-xs md:text-sm mt-1">Pregnancy Care</p>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       className="bg-purple-50 p-2 md:p-3 rounded-lg"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -215,7 +258,7 @@ const Banner = () => {
       </div>
 
       {/* Contact Info */}
-      <motion.div 
+      <motion.div
         className="bg-white py-6 border-t border-purple-100"
         initial={{ opacity: 0, y: 20 }}
         animate={isMounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -234,7 +277,7 @@ const Banner = () => {
             </svg>
             <span className="text-purple-700">7499931560</span>
           </div>
-          <motion.button 
+          <motion.button
             className="text-pink-500 hover:text-pink-600 font-medium flex items-center"
             whileHover={{ scale: 1.05 }}
           >
@@ -247,7 +290,7 @@ const Banner = () => {
       </motion.div>
 
       {/* Scroll Indicator */}
-    
+
 
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
