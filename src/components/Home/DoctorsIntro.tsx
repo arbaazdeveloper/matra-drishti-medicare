@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const DoctorsIntroduction = () => {
@@ -31,25 +32,25 @@ const DoctorsIntroduction = () => {
       name: "DR. AMITA GUPTA",
       title: "Gynecologist & Infertility Specialist",
       description: "Dr. Amita Gupta, MBBS, DGO (K.G.M.C), and Diploma in Urogynecology (Germany), is a highly experienced gynecologist specializing in infertility management, hysteroscopy, and laparoscopic procedures. With over 15 years of expertise, she has successfully treated numerous complex cases and provided compassionate care to women at every stage of life. She has also served as a Senior Consultant for Women's Health at Fatima Hospital, Lucknow, where she earned a reputation for excellence in maternal and reproductive healthcare.",
-      image: "/doctor-1.jpg", // Replace with actual image path
+      image: "https://res.cloudinary.com/dxknbk2hd/image/upload/v1757836599/matra-drishti-medicare/dr.amit_r5zjci.jpg", // Replace with actual image path
       specialties: ["Infertility Treatment", "Hysteroscopy", "Laparoscopic Gynecology", "Women's Health"],
       experience: "15+ Years",
       color: "bg-pink-50",
       borderColor: "border-pink-200",
       textColor: "text-pink-600",
-      profile:'/doctors/dr-amita-gupta'
+      profile: '/doctors/dr-amita-gupta'
     },
     {
       name: "DR. Rajesh Gupta",
       title: "Senior Eye Surgeon",
       description: "Dr. Rajesh Gupta, MBBS, DOMS, FCLI, is a highly experienced ophthalmologist and the founder of Matra Drishti Medicare. With over 15 years of dedicated service, he has successfully performed more than 10,000 eye surgeries. Having previously served as an Eye Surgeon at Sitapur Eye Hospital and as a Fellow at S.N.C Chitrakoot, Dr. Gupta brings unparalleled expertise in cataract, refractive, and other advanced ophthalmic procedures. He is committed to providing world-class eye care with precision and compassion.",
-      image: "/doctor-1.jpg", // Replace with actual image path
+      image: "https://res.cloudinary.com/dxknbk2hd/image/upload/v1757836599/matra-drishti-medicare/dr.rajes_k3hyaa.jpg", // Replace with actual image path
       specialties: ["Cataract Surgery", "Refractive Surgery", "Advanced Ophthalmic Procedures", "Comprehensive Eye Care"],
       experience: "15+ Years",
       color: "bg-purple-50",
       borderColor: "border-purple-200",
       textColor: "text-purple-600",
-       profile:'/doctors/dr-rajesh-gupta'
+      profile: '/doctors/dr-rajesh-gupta'
     }
   ];
 
@@ -87,12 +88,17 @@ const DoctorsIntroduction = () => {
               <div className="p-6">
                 <div className="flex flex-col md:flex-row items-center mb-6">
                   <div className="w-32 h-32 rounded-full bg-white p-1 shadow-md border-2 border-white mb-4 md:mb-0 md:mr-6">
-                    <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <Image
+                        src={doctor.image}
+                        alt={doctor.name}
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
+
                   <div className="text-center md:text-left">
                     <h3 className="text-xl font-bold text-purple-900">{doctor.name}</h3>
                     <p className={`font-semibold ${doctor.textColor} mb-2`}>{doctor.title}</p>
@@ -157,14 +163,14 @@ const DoctorsIntroduction = () => {
           </p>
 
           <Link href={'/doctors'}>
-          
-          <motion.button
-            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Meet Our Entire Team
-          </motion.button>
+
+            <motion.button
+              className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Meet Our Entire Team
+            </motion.button>
           </Link>
         </motion.div>
       </div>

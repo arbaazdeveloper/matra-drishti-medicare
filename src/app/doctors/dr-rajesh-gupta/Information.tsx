@@ -1,6 +1,7 @@
 "use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const DoctorProfilePage = () => {
     // Animation variants
@@ -84,7 +85,7 @@ const DoctorProfilePage = () => {
                             <div className="relative">
                                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                        src="https://res.cloudinary.com/dxknbk2hd/image/upload/v1757836599/matra-drishti-medicare/dr.rajes_k3hyaa.jpg"
                                         alt="Dr.Rajesh Gupta"
                                         width={320}
                                         height={320}
@@ -430,7 +431,11 @@ const DoctorProfilePage = () => {
                     <p className="text-xl mb-8 max-w-3xl mx-auto">
                         Experience the exceptional care that has made Dr.Rajesh one of Lucknow's most trusted gynecologists
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <Link href={'/appointment'}
+                       
+                        >
+                        
                         <motion.button
                             className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                             whileHover={{ scale: 1.05 }}
@@ -438,6 +443,11 @@ const DoctorProfilePage = () => {
                         >
                             Book an Appointment
                         </motion.button>
+                        </Link>
+                        <Link href={'/contact'}
+                      
+                        >
+                        
                         <motion.button
                             className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
                             whileHover={{ scale: 1.05 }}
@@ -445,6 +455,7 @@ const DoctorProfilePage = () => {
                         >
                             Contact Clinic
                         </motion.button>
+                        </Link>
                     </div>
                 </div>
             </section>
