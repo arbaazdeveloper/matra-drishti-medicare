@@ -299,7 +299,7 @@ const CarePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">30+</div>
               <div className="text-gray-700">Years Experience</div>
             </motion.div>
 

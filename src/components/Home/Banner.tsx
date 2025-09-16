@@ -99,7 +99,7 @@ const Banner = () => {
                   variants={itemVariants}
                 >
                   <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Rajesh Gupta</h2>
-                  <p className="text-xs text-pink-600 ">MBBS , DOMS,FCLI,Ex Eye surgeon (Sitapur Eye Hospital) , Fellow S.N.C Chitrakoot (Senior Eye surgeon)</p>
+                  <p className="text-xs text-pink-600 ">MBBS , DOMS,FCLI,Ex Eye surgeon (Sitapur Eye Hospital) , Fello S.N.C Chitrakoot (Senior Eye surgeon)</p>
                 </motion.div>
               </div>
 
@@ -269,7 +269,7 @@ const Banner = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span className="text-purple-700">helpdesk@matradristi.com</span>
+            <span className="text-purple-700">matradristimedicare@rediffmail.com</span>
           </div>
           <div className="flex items-center mb-4 md:mb-0">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -29,7 +29,7 @@ const OurStory = () => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <div className="text-2xl font-bold text-pink-600">10+</div>
+                                <div className="text-2xl font-bold text-pink-600">30+</div>
                                 <div className="text-gray-600">Years of Experience</div>
                             </div>
                             <div className="bg-white p-4 rounded-lg shadow-sm">

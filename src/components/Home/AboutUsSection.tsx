@@ -133,7 +133,7 @@ const AboutSection = () => {
               className="text-gray-700 mb-6 leading-relaxed"
               variants={itemVariants}
             >
-           Matra Drishti Medicare, Lucknow was established in 2011 with a vision to provide advanced healthcare with compassion and care. With a bed capacity of 45 and a dedicated team of 15 skilled staff members, the hospital is committed to delivering quality treatment across multiple specialties.
+           Matra Drishti Medicare, Lucknow was established in 1998 with a vision to provide advanced healthcare with compassion and care. With a bed capacity of 45 and a dedicated team of 15 skilled staff members, the hospital is committed to delivering quality treatment across multiple specialties.
             </motion.p>
             <motion.p
               className="text-gray-700 mb-8 leading-relaxed"
@@ -206,7 +206,7 @@ const AboutSection = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-pink-600 mb-2">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-pink-600 mb-2">30+</div>
               <div className="text-gray-600">Years of Experience</div>
             </div>
             <div className="text-center">

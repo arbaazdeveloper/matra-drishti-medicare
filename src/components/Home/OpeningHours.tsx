@@ -26,24 +26,24 @@ const OpeningHours = () => {
 
   // Hospital hours data
   const hospitalHours = [
-    { day: 'Monday', time: '9:00 AM to 5:00 PM', icon: '🏥' },
-    { day: 'Tuesday', time: '9:00 AM to 5:00 PM', icon: '🏥' },
-    { day: 'Wednesday', time: '9:00 AM to 5:00 PM', icon: '🏥' },
-    { day: 'Thursday', time: '9:00 AM to 5:00 PM', icon: '🏥' },
-    { day: 'Friday', time: '9:00 AM to 5:00 PM', icon: '🏥' },
-    { day: 'Saturday', time: '10:00 AM to 2:00 PM', icon: '🏥' },
+    { day: 'Monday', time: ' 9:00AM to 10:30 PM  5:00 PM TO 9:00 PM', icon: '🏥' },
+    { day: 'Tuesday', time: ' 9:00AM to 10:30 PM 5:00 PM TO 9:00 PM', icon: '🏥' },
+    { day: 'Wednesday', time: ' 9:00AM to 10:30 PM 5:00 PM TO 9:00 PM', icon: '🏥' },
+    { day: 'Thursday', time: ' 9:00AM to 10:30 PM 5:00 PM TO 9:00 PM', icon: '🏥' },
+    { day: 'Friday', time: ' 9:00AM to 10:30 PM 5:00 PM TO 9:00 PM', icon: '🏥' },
+    { day: 'Saturday', time: ' 9:00AM to 10:30 PM 5:00 PM TO 9:00 PM', icon: '🏥' },
     { day: 'Sunday', time: 'Emergency Only', icon: '🏥' }
   ];
 
   // Clinic hours data
   const clinicHours = [
-    { day: 'Monday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Tuesday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Wednesday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Thursday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Friday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Saturday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' },
-    { day: 'Sunday', time: '4:00 PM to 8:30 PM', icon: '👩‍⚕️' }
+    { day: 'Monday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Tuesday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Wednesday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Thursday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Friday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Saturday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' },
+    { day: 'Sunday', time: '10:00 AM to 1:30 PM', icon: '👩‍⚕️' }
   ];
 
   return (
@@ -78,7 +78,7 @@ const OpeningHours = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                Hospital Hours
+                Hospital Hours (OPD Timings)
               </h3>
             </div>
             <div className="p-6">
@@ -89,13 +89,17 @@ const OpeningHours = () => {
                     className="flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0"
                     variants={itemVariants}
                   >
-                    <div className="flex items-center">
+                    <div className="flex items-center w-[50%]">
                       <span className="text-blue-500 mr-3">{day.icon}</span>
                       <span className="font-medium text-gray-700">{day.day}</span>
                     </div>
-                    <span className={`font-semibold ${day.time === 'Emergency Only' ? 'text-red-500' : 'text-gray-800'}`}>
+                    <div className='w-[50%]'>
+
+
+                    <span className={`font-semibold text-xs md:text-sm  ${day.time === 'Emergency Only' ? 'text-red-500' : 'text-gray-800'}`}>
                       {day.time}
                     </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -138,7 +142,7 @@ const OpeningHours = () => {
                       <span className="text-purple-500 mr-3">{day.icon}</span>
                       <span className="font-medium text-gray-700">{day.day}</span>
                     </div>
-                    <span className="font-semibold text-gray-800">{day.time}</span>
+                    <span className="font-semibold text-gray-800 text-xs md:text-sm">{day.time}</span>
                   </motion.div>
                 ))}
               </div>

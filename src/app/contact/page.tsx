@@ -35,7 +35,7 @@ const ContactPage = () => {
       type: "Hospital",
       address: "8/265, Sector 8, Jankipuram Extension, Lucknow, Uttar Pradesh 226031",
       phone: "+9174999 31560",
-      email: "matradrishtimedicare9@gmail.com",
+      email: "matradristimedicare@rediffmail.com",
       hours: "24/7 Emergency Services",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4779.653565776115!2d80.9350303764796!3d26.936752276632824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957d4c651d269%3A0x30e558a353e1b9ff!2sMatra%20Drishti%20Medicare!5e1!3m2!1sen!2sin!4v1757672034097!5m2!1sen!2sin",
       features: [
@@ -52,7 +52,7 @@ const ContactPage = () => {
       type: "Clinic",
       address: "Shop no 14 -15, Ramanand Market, Sitapur Rd, adjacent Ahibaranpur power house, Sector CS, Triveni Nagar, Lucknow, Uttar Pradesh 226021",
       phone: "+9174999 31560",
-      email: "matradrishtimedicare9@gmail.com",
+      email: "matradristimedicare@rediffmail.com",
       hours: "Monday to Sunday: 4:00 PM to 8:30 PM",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4781.759636551906!2d80.93142827647827!3d26.88702547666254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999570c9dba58bd%3A0xe5a5e172366e29ce!2sMatra%20Drishti%20Medicare!5e1!3m2!1sen!2sin!4v1757672097593!5m2!1sen!2sin",
       features: [
@@ -84,7 +84,7 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Email Us",
-      details: ["matradrishtimedicare9@gmail.com"],
+      details: ["matradristimedicare@rediffmail.com"],
       description: "Send us an email anytime"
     },
     {
@@ -105,7 +105,7 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Opening Hours",
-      details: ["Hospital: 24/7", "Clinic: 4PM - 8:30PM"],
+      details: ["Hospital: 24/7", "Clinic: 1AM - 1:30PM"],
       description: "We're here when you need us"
     }
   ];

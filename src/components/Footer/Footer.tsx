@@ -128,7 +128,7 @@ const Footer = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:matradrishtimedicare9@gmail.com" className="text-purple-200 hover:text-pink-300">matradrishtimedicare9@gmail.com</a>
+                <a href="mailto:matradristimedicare@rediffmail.com" className="text-purple-200 hover:text-pink-300">matradristimedicare@rediffmail.com</a>
               </div>
 
               <div className="flex items-center">
@@ -136,7 +136,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <p className="text-purple-200">Mon-Sun: 4:00 PM - 8:30 PM</p>
+                  <p className="text-purple-200">Mon-Sat 9:00AM to 10:30 PM & 5:00 PM TO 9:00 PM</p>
                   <p className="text-purple-200">Emergency: 24/7</p>
                 </div>
               </div>
