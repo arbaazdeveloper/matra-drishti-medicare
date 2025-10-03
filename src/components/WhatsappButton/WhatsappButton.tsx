@@ -7,27 +7,12 @@ const WhatsAppButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   // WhatsApp number and pre-filled message
-  const phoneNumber = "1234567890"; // Replace with your actual number
+  const phoneNumber = "+917499931560"; // Replace with your actual number
   const message = "Hello, I would like to get more information about your services.";
   const encodedMessage = encodeURIComponent(message);
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-  // Handle scroll to show/hide button
-//   useEffect(() => {
-//     let lastScrollY = window.scrollY;
-    
-//     const handleScroll = () => {
-//       if (window.scrollY > lastScrollY) {
-//         setIsVisible(false); // Hide when scrolling down
-//       } else {
-//         setIsVisible(true); // Show when scrolling up
-//       }
-//       lastScrollY = window.scrollY;
-//     };
 
-//     window.addEventListener('scroll', handleScroll, { passive: true });
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
 
   const handleClick = () => {
     window.open(whatsappURL, '_blank');
