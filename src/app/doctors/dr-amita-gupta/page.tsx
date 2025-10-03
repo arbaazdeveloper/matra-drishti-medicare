@@ -18,7 +18,7 @@ import { Metadata } from 'next'
     title: "Best Gynecologist in Lucknow | Dr. Amita Gupta",
     description:
       "Consult Dr. Amita Gupta, senior gynecologist and infertility specialist in Lucknow with 15+ years of expertise in obstetrics, hysteroscopy, and laparoscopic gynecology.",
-    url: "https://yourhospitaldomain.com/doctors/dr-amita-gupta", // replace with actual URL
+    url: "https://www.matradrishtimedicare.in/doctors/dr-amita-gupta", // replace with actual URL
     type: "profile",
     images: [
       {

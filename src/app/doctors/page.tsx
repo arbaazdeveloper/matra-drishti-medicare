@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Best Doctors in Lucknow | Matra Drishti Medicare",
     description:
       "Explore our team of expert doctors at Matra Drishti Medicare, Lucknow. Providing trusted healthcare in Gynecology, Cardiology, Ophthalmology, Infertility, and General Surgeries.",
-    url: "https://yourwebsite.com/doctors",
+    url: "https://www.matradrishtimedicare.in/doctors",
     type: "website",
     images: [
       {

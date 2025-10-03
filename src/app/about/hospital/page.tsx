@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Matra Dristi Medicare Hospital | Jankipuram Extension Lucknow",
     description:
       "Trusted hospital in Jankipuram Extension, Lucknow with specialties in gynecology, ophthalmology, cardiology, infertility treatments, and general surgeries.",
-    url: "https://yourwebsite.com/hospital",
+    url: "https://www.matradrishtimedicare.in/about/hospital",
     type: "website",
     images: [
       {

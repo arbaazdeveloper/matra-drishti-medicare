@@ -391,7 +391,7 @@ export const metadata: Metadata = {
     title: "Best Healthcare Facilities in Lucknow | Matra Drishti Medicare",
     description:
       "Matra Drishti Medicare provides state-of-the-art facilities in gynecology, ophthalmology, cardiology, and general surgery with compassionate and professional care in Lucknow.",
-    url: "https://yourdomain.com/facilities", // replace with actual URL
+    url: "https://www.matradrishtimedicare.in/care", // replace with actual URL
     siteName: "Matra Drishti Medicare",
     locale: "en_IN",
     type: "website"

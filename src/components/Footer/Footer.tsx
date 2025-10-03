@@ -1,7 +1,18 @@
 "use client"
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const Footer = () => {
+  const navLinks = [
+  { name: 'Home', link: '/' },
+  { name: 'About Us', link: '/about' },
+  { name: 'Services', link: '/care' },
+  { name: 'Doctors', link: '/doctors' },
+  { name: 'Appointment', link: '/appointment' },
+  { name: 'Contact', link: '/contact' },
+];
+
+  
   // Animation variants
   const containerVariants :Variants = {
     hidden: { opacity: 0 },
@@ -50,7 +61,7 @@ const Footer = () => {
               Providing exceptional gynecology and pregnancy care with compassion and expertise. 
               Your health and wellness are our top priorities.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {['facebook', 'twitter', 'instagram', 'linkedin'].map((platform) => (
                 <motion.a
                   key={platform}
@@ -64,21 +75,21 @@ const Footer = () => {
                   </svg>
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-purple-700">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Doctors', 'Appointment', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors flex items-center">
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.link} className="text-purple-200 hover:text-pink-300 transition-colors flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>

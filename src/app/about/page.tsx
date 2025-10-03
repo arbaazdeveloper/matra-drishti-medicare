@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "About Matra Dristi Medicare | Trusted Hospital in Lucknow",
     description:
       "Matra Dristi Medicare was established in 2011 in Lucknow with 45 beds and a team of expert doctors. Specializing in Gynecology, Ophthalmology, Cardiology, and General Surgery.",
-    url: "https://yourwebsite.com/about",
+    url: "https://www.matradrishtimedicare.in/about",
     type: "website",
     images: [
       {
