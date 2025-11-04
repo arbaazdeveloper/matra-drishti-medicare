@@ -1,6 +1,7 @@
 "use client"
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HospitalAboutPage = () => {
   // Animation variants
@@ -14,7 +15,7 @@ const HospitalAboutPage = () => {
     }
   };
 
-  const itemVariants :Variants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -44,7 +45,16 @@ const HospitalAboutPage = () => {
     "Vaccination for children and adults.",
     "Admission facility, pathology, and pharmacy.",
     "Phototherapy treatment.",
-    "Treatment and admission facilities for all general medical diseases."
+    "Treatment and admission facilities for all general medical diseases.",
+    "Cardiac consultations",
+    "Caesarean deliveries",
+    "Kidney and gallbladder surgery facilities",
+    "Intestinal, thyroid, gall bladder, and appendix surgeries",
+    "Hydrocoele and hernia repair surgeries",
+    "Open and laparoscopic surgeries",
+    "Hysteroscopic surgeries",
+    "Vaginal surgeries",
+    'Pathology', 'Ultrasound'
   ];
 
   return (
@@ -52,7 +62,7 @@ const HospitalAboutPage = () => {
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-bold mb-4 playfair-font"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +70,7 @@ const HospitalAboutPage = () => {
           >
             Matra Drishti Medicare Hospital
           </motion.h1>
-          <motion.h2 
+          <motion.h2
             className="text-xl md:text-2xl mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -68,7 +78,7 @@ const HospitalAboutPage = () => {
           >
             Hospital in Jankipuram Extension Lucknow
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-white mx-auto mt-6"
             initial={{ width: 0 }}
             animate={{ width: 96 }}
@@ -91,16 +101,16 @@ const HospitalAboutPage = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-6 playfair-font">Our Story</h2>
               <div className="w-24 h-1 bg-pink-500 mb-6"></div>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Hospital established in 2011 by Dr. Rajesh Gupta and Dr. Amita Gupta with a vision to serve in the health sector. 
+                Hospital established in 1998 by Dr. Rajesh Gupta and Dr. Amita Gupta with a vision to serve in the health sector.
                 Our services include Gynecology, Ophthalmology, Cardiology, DNB, and General Surgeries, ensuring comprehensive care for patients.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                We specialize in Gynecological surgeries, Ophthalmic surgeries, Cardiology OPD, and various other medical services 
+                We specialize in Gynecological surgeries, Ophthalmic surgeries, Cardiology OPD, and various other medical services
                 to provide complete healthcare solutions to our community.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-2xl font-bold text-pink-600">12+</div>
+                  <div className="text-2xl font-bold text-pink-600">25+</div>
                   <div className="text-gray-600">Years of Service</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -113,7 +123,7 @@ const HospitalAboutPage = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -124,7 +134,7 @@ const HospitalAboutPage = () => {
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <div className="h-80 w-full relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1153&q=80"
+                    src="https://lh3.googleusercontent.com/p/AF1QipMi-JQrzu1aHc_qy9OsDJO5FL3HwkSgnvqlWJBb=s1360-w1360-h1020-rw"
                     alt="Matra Drishti Medicare Hospital"
                     fill
                     className="object-cover"
@@ -139,7 +149,7 @@ const HospitalAboutPage = () => {
       {/* Founders Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +179,7 @@ const HospitalAboutPage = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Dr. Rajesh Gupta</h3>
               <p className="text-pink-600 mb-4">Opthalmologist , Eye Surgeon</p>
               <p className="text-gray-700">
-                With over 18 years of experience, Dr. Rajesh Gupta specializes in Eye care treatments 
+                With over 30+ years of experience, Dr. Rajesh Gupta specializes in Eye care treatments
                 and Surgeries .
               </p>
             </motion.div>
@@ -189,7 +199,7 @@ const HospitalAboutPage = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Dr. Amita Gupta</h3>
               <p className="text-pink-600 mb-4">Gynecologist & Pregnancy Specialist</p>
               <p className="text-gray-700">
-                Dr. Amita Gupta is an experienced Obstetrician and Gynecologist with years in women's healthcare, 
+                Dr. Amita Gupta is an experienced Obstetrician and Gynecologist with years in women's healthcare,
                 specializing in obstetrics, gynecology, and gynecological endoscopy.
               </p>
             </motion.div>
@@ -200,7 +210,7 @@ const HospitalAboutPage = () => {
       {/* Services Section */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -245,20 +255,26 @@ const HospitalAboutPage = () => {
             Visit Matra Drishti Medicare Hospital for comprehensive medical care from experienced specialists.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.button 
-              className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Book an Appointment
-            </motion.button>
-            <motion.button 
-              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Us
-            </motion.button>
+            <Link href={'/appointement'}>
+
+              <motion.button
+                className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Book an Appointment
+              </motion.button>
+            </Link>
+            <Link href={'/contact'}>
+
+              <motion.button
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Us
+              </motion.button>
+            </Link>
           </div>
         </div>
       </section>

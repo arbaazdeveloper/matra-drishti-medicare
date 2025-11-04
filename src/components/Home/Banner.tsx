@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const Banner = () => {
@@ -67,14 +68,14 @@ const Banner = () => {
             animate={isMounted ? "visible" : "hidden"}
           >
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-6xl font-bold text-purple-900 mb-6 playfair-font leading-tight"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-900 mb-6 playfair-font leading-tight"
               variants={itemVariants}
             >
               Your Health, Our Priority – Hospital & Clinic Care in Lucknow
             </motion.h1>
 
             <motion.h2
-              className="text-xl text-purple-700 mb-8 max-w-md mx-auto md:mx-0"
+              className="text-lg text-purple-700 mb-8 max-w-md mx-auto md:mx-0"
               variants={itemVariants}
             >
               Matra Drishti Medicare provides trusted healthcare, advanced treatments, and patient-first medical services in Lucknow
@@ -87,8 +88,8 @@ const Banner = () => {
                   className="mb-10"
                   variants={itemVariants}
                 >
-                  <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Amita Gupta</h2>
-                  <p className="text-xs text-pink-600 ">MBBS,DGO (K.G.M.C),Diploma in Urogynaecology (Germany) Specialist in infertilty/Hysteroscopy & Laproscopy</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-purple-800 mb-2 text-left">Dr. Amita Gupta</h2>
+                  <p className="text-[0.625rem] text-pink-600 text-left">MBBS ,DGO  (K.G.M.C) ,FRM,<br/> Diploma in Urogynaecology (Germany) <br/> Specialist in infertilty/Hysteroscopy & Laproscopy</p>
                 </motion.div>
               </div>
               {/* <span className='text-xl playfair-font text-purple-800'>&</span> */}
@@ -98,8 +99,8 @@ const Banner = () => {
                   className="mb-10"
                   variants={itemVariants}
                 >
-                  <h2 className="text-xl font-semibold text-purple-800 mb-2">Dr. Rajesh Gupta</h2>
-                  <p className="text-xs text-pink-600 ">MBBS , DOMS,FCLI,Ex Eye surgeon (Sitapur Eye Hospital) , Fello S.N.C Chitrakoot (Senior Eye surgeon)</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-purple-800 mb-2 text-left">Dr. Rajesh Gupta</h2>
+                  <p className="text-[0.625rem] text-pink-600 text-left">MBBS , DOMS, FCLI, <br/> Ex Eye surgeon (Sitapur Eye Hospital) , <br/> Fello S.N.C Chitrakoot (Senior Eye surgeon)</p>
                 </motion.div>
               </div>
 
@@ -220,7 +221,7 @@ const Banner = () => {
               <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center p-8 shadow-lg">
                 <div className="text-center">
                   <motion.div
-                    className="mb-6"
+                    className="mb-6 hidden md:block"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity }}
                   >
@@ -228,8 +229,8 @@ const Banner = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-md md:text-2xl font-bold text-purple-900 mb-4">Comprehensive Women's Healthcare</h3>
-                  <p className="text-purple-700 mb-6 text-sm md:text-md">Expert care for every stage of a woman's life journey</p>
+                  <h3 className="text-md md:text-2xl font-bold text-purple-900 mb-4">Comprehensive Patient's Healthcare</h3>
+                  <p className="text-purple-700 mb-6 text-sm md:text-md">Expert care for every stage of a Patient's life journey</p>
                   <div className="grid grid-cols-2 gap-4">
                     <motion.div
                       className="bg-pink-50 p-1 md:p-3 rounded-lg"
@@ -248,6 +249,24 @@ const Banner = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <p className="text-xs md:text-sm mt-1">Eye Care</p>
+                    </motion.div>
+                     <motion.div
+                      className="bg-pink-50 p-1 md:p-3 rounded-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-xs md:text-sm mt-1">General Surgery</p>
+                    </motion.div>
+                    <motion.div
+                      className="bg-purple-50 p-2 md:p-3 rounded-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-auto text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-xs md:text-sm mt-1">General Medicine</p>
                     </motion.div>
                   </div>
                 </div>
@@ -275,9 +294,11 @@ const Banner = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <span className="text-purple-700">7499931560</span>
+            <span className="text-purple-700">+917499931560</span>
           </div>
-          <motion.button
+          <Link href={'/contact'}>
+          
+          <motion.div
             className="text-pink-500 hover:text-pink-600 font-medium flex items-center"
             whileHover={{ scale: 1.05 }}
           >
@@ -285,7 +306,8 @@ const Banner = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
             </svg>
-          </motion.button>
+          </motion.div>
+          </Link>
         </div>
       </motion.div>
 

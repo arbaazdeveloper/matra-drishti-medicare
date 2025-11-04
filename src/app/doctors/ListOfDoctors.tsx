@@ -52,7 +52,19 @@ const DoctorsListPage = () => {
       borderColor: "border-purple-200",
       textColor: "text-purple-600",
        profile:'/doctors/dr-rajesh-gupta'
-    }
+    },
+    //   {
+    //   name: "DR. Bhadauria",
+    //   title: "Cardiologist",
+    //   description: "Dr. Bhadauria MBBS, DIPCARD is a highly experienced cardiologist  With over 30+ years of experience , former senior cardiologist from Balrampur hospital",
+    //   image: "",
+    //   specialties: ["Cardiology"],
+    //   experience: "30+ Years",
+    //   color: "bg-purple-50",
+    //   borderColor: "border-purple-200",
+    //   textColor: "text-purple-600",
+    //    profile:'/doctors/dr-rajesh-gupta'
+    // }
     
   ];
 

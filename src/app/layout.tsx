@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbaar/Navbaar";
 import Footer from "@/components/Footer/Footer";
 import WhatsAppButton from "@/components/WhatsappButton/WhatsappButton";
 import TopHeaderBar from "@/components/Topheader/TopHeader";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextTopLoader
+          color="linear-gradient(to right, #6d28d9, #4c1d95)"
+          showSpinner={false}
+          height={4}
+          crawlSpeed={200}
+          shadow="0 0 10px #6d28d9, 0 0 5px #4c1d95"
+        />
         <TopHeaderBar />
         <Navbar />
         <div className="overflow-x-hidden">

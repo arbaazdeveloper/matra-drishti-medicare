@@ -35,7 +35,7 @@ const DoctorProfilePage = () => {
                 <div
                     className="absolute inset-0 z-0"
                     style={{
-                        backgroundImage: `url(https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80)`,
+                        backgroundImage: `url("https://images.unsplash.com/photo-1514416309827-bfb0cf433a2d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1471")`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
@@ -73,7 +73,7 @@ const DoctorProfilePage = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Contact Doctor
+                                call
                             </motion.a>
                         </motion.div>
 
@@ -287,7 +287,17 @@ const DoctorProfilePage = () => {
                                 {[
                                     {
                                         degree: "MBBS",
+                                        institution: "BRD Medical College Gorakhpur",
+                                        year: "NA"
+                                    },
+                                    {
+                                        degree: "DGO",
                                         institution: "King George's Medical College (K.G.M.C), Lucknow",
+                                        year: "NA"
+                                    },
+                                    {
+                                        degree: "FRM",
+                                        institution: "Sri Siddhartha University",
                                         year: "NA"
                                     },
                                     {

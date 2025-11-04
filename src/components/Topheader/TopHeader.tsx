@@ -1,5 +1,6 @@
 "use client"
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const TopHeaderBar = () => {
   return (
@@ -34,6 +35,8 @@ const TopHeaderBar = () => {
           </div>
 
           {/* Right Side - Ask a Question Button */}
+          <Link href={'/contact'}>
+          
           <motion.button
             className="bg-white text-pink-600 hover:bg-pink-50 font-medium py-1.5 px-4 rounded-full text-sm transition-colors flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -44,6 +47,7 @@ const TopHeaderBar = () => {
             </svg>
             Ask a Question
           </motion.button>
+          </Link>
         </div>
       </div>
     </div>

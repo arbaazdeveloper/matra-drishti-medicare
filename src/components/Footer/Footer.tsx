@@ -11,6 +11,32 @@ const Footer = () => {
   { name: 'Appointment', link: '/appointment' },
   { name: 'Contact', link: '/contact' },
 ];
+const careCategories = [
+  {
+    name: "Pregnancy Care",
+    link: "/care?service=Women's Healthcare"
+  },
+  {
+    name: "Gynecology",
+    link: "/care?service=Women's Healthcare"
+  },
+  {
+    name: "Fertility Treatments",
+    link: "/care?service=Women's Healthcare"
+  },
+  {
+    name: "Menopause Care",
+    link: "/care?service=Women's Healthcare"
+  },
+  {
+    name: "Well Woman Checkup",
+    link: "/care?service=Women's Healthcare"
+  },
+  {
+    name: "Eye Care",
+    link: "/care?service=Eye Care"
+  }
+];
 
   
   // Animation variants
@@ -99,14 +125,14 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-purple-700">Our Services</h3>
             <ul className="space-y-3">
-              {['Pregnancy Care', 'Gynecology', 'Fertility Treatments',  'Menopause Care', 'Well Woman Checkup','Eye Care'].map((service) => (
-                <li key={service}>
-                  <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors flex items-center">
+              {careCategories.map((service) => (
+                <li key={service.name}>
+                  <Link href={service.link} className="text-purple-200 hover:text-pink-300 transition-colors flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>

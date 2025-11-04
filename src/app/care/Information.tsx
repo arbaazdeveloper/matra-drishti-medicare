@@ -2,6 +2,7 @@
 import { motion, Variants } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CarePage = () => {
   const [activeCategory, setActiveCategory] = useState('eye-care');
@@ -17,8 +18,8 @@ const CarePage = () => {
     }
   };
 
-  const itemVariants :Variants= {
-   
+  const itemVariants: Variants = {
+
     visible: {
       y: 0,
       opacity: 1,
@@ -83,6 +84,19 @@ const CarePage = () => {
       color: "bg-teal-50",
       borderColor: "border-teal-200",
       textColor: "text-teal-600"
+    },
+     {
+      id: 'lab',
+      name: 'Lab Tests',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      color: "bg-teal-50",
+      borderColor: "border-teal-200",
+      textColor: "text-teal-600"
     }
   ];
 
@@ -105,14 +119,26 @@ const CarePage = () => {
       "Treatment and surgery facilities for all gynecological and obstetric diseases"
     ],
     'surgery': [
+      "Caesarean deliveries",
+      "Kidney and gallbladder surgery facilities",
+      "Intestinal, thyroid, gall bladder, and appendix surgeries",
+      "Hydrocoele and hernia repair surgeries",
+      "Open and laparoscopic surgeries",
+      "Hysteroscopic surgeries",
+      "Vaginal surgeries",
       "Kidney and gallbladder surgery facilities"
     ],
     'general': [
       "Vaccination for children and adults",
+      "Treatment for dengue, typhoid, and viral fever",
+      "Management of intestinal obstruction and thyroid disorders",
+      "Comprehensive care for infections and chronic medical conditions",
       "Admission facility, pathology, and pharmacy",
       "Phototherapy treatment",
-      "Treatment and admission facilities for all general medical diseases"
-    ]
+      "Treatment and admission facilities for all general medical diseases",
+      " Cardiac consultations"
+    ],
+    'lab':['Pathology','Ultrasound']
   };
 
   const currentServices = services[activeCategory as keyof typeof services];
@@ -123,7 +149,7 @@ const CarePage = () => {
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-bold mb-6 playfair-font"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,7 +157,7 @@ const CarePage = () => {
           >
             Our Medical Services
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,7 +165,7 @@ const CarePage = () => {
           >
             Comprehensive healthcare services provided with expertise, compassion, and state-of-the-art technology.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-white mx-auto mt-6"
             initial={{ width: 0 }}
             animate={{ width: 96 }}
@@ -156,11 +182,10 @@ const CarePage = () => {
               <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
-                  activeCategory === category.id
-                    ? 'bg-pink-500 text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${activeCategory === category.id
+                  ? 'bg-pink-500 text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -185,7 +210,7 @@ const CarePage = () => {
             >
               <h2 className="text-3xl font-bold text-gray-800 mb-6 playfair-font">{currentCategory?.name} Services</h2>
               <div className="w-24 h-1 bg-pink-500 mb-8"></div>
-              
+
               <motion.div
                 className="space-y-6"
                 variants={containerVariants}
@@ -219,7 +244,7 @@ const CarePage = () => {
               transition={{ duration: 0.7 }}
               className="space-y-8"
             >
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+              {/* <div className="rounded-2xl overflow-hidden shadow-xl">
                 <div className="h-80 w-full relative">
                   <Image
                     src={currentCategory?.image || "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"}
@@ -228,7 +253,7 @@ const CarePage = () => {
                     className="object-cover"
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Why Choose Our {currentCategory?.name} Services?</h3>
@@ -260,16 +285,19 @@ const CarePage = () => {
                 </ul>
               </div>
 
-              <motion.button 
-                className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Book a Consultation
-              </motion.button>
+
+              <a href={'tel:+917499931560'}>
+                <motion.button
+                  className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Call For Consultation
+                </motion.button>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -278,7 +306,7 @@ const CarePage = () => {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +320,7 @@ const CarePage = () => {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <motion.div 
+            <motion.div
               className="text-center p-6 bg-blue-50 rounded-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -303,7 +331,7 @@ const CarePage = () => {
               <div className="text-gray-700">Years Experience</div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="text-center p-6 bg-pink-50 rounded-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +342,7 @@ const CarePage = () => {
               <div className="text-gray-700">Happy Patients</div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="text-center p-6 bg-purple-50 rounded-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -325,7 +353,7 @@ const CarePage = () => {
               <div className="text-gray-700">Patient Satisfaction</div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="text-center p-6 bg-teal-50 rounded-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -347,20 +375,27 @@ const CarePage = () => {
             Schedule your appointment today and experience our comprehensive healthcare services.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.button 
-              className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Book an Appointment
-            </motion.button>
-            <motion.button 
-              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Us
-            </motion.button>
+            <Link href={'/appointment'}>
+
+              <motion.div
+                className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Book an Appointment
+              </motion.div>
+            </Link>
+
+            <Link href={'/contact'}>
+
+              <motion.div
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Us
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>

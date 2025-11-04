@@ -27,7 +27,6 @@ const Navbaar = () => {
     { name: 'DOCTOR', href: '/doctors' },
     { name: 'REVIEWS', href: '#reviews' },
     { name: 'ABOUT', href: '/about' },
-    { name: 'BLOG', href: '/blogs' },
     { name: 'CONTACT', href: '/contact' },
   ];
 
