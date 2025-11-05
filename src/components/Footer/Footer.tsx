@@ -218,11 +218,14 @@ const careCategories = [
               © {new Date().getFullYear()} Matra Drishti Medicare. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              {['Privacy Policy', 'Terms of Service', 'Disclaimer'].map((item) => (
+                 <Link  href="/privacy-policy" className="text-purple-400 hover:text-pink-300 text-sm transition-colors">
+                 Privacy Policy
+                </Link>
+              {/* {['Privacy Policy', 'Terms of Service', 'Disclaimer'].map((item) => (
                 <a key={item} href="#" className="text-purple-400 hover:text-pink-300 text-sm transition-colors">
                   {item}
                 </a>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

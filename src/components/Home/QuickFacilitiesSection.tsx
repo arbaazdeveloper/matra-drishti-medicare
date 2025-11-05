@@ -171,10 +171,10 @@ const QuickFacilitiesSection = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href={'/about/hospital'} className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
+              <Link href={'/care'} className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md">
                 Explore More Facilities
               </Link>
-              <Link href={'/care'} className="bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <Link href={'/about/hospital'} className="bg-transparent border-2 border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                 Learn More
               </Link>
             </motion.div>
