@@ -24,10 +24,9 @@ const Navbaar = () => {
   const navItems = [
     { name: 'LEARN', href: '/learn' },
     { name: 'CARE', href: '/care' },
-    { name: 'DOCTOR', href: '/doctors' },
+    { name: 'DOCTORS', href: '/doctors' },
     { name: 'REVIEWS', href: '#reviews' },
     { name: 'ABOUT', href: '/about' },
-    { name: 'BLOG', href: '/blogs' },
     { name: 'CONTACT', href: '/contact' },
   ];
 

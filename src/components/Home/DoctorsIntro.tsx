@@ -31,7 +31,7 @@ const DoctorsIntroduction = () => {
     {
       name: "DR. AMITA GUPTA",
       title: "Gynecologist & Infertility Specialist",
-      description: "Dr. Amita Gupta, MBBS, DGO (K.G.M.C), and Diploma in Urogynecology (Germany), is a highly experienced gynecologist specializing in infertility management, hysteroscopy, and laparoscopic procedures. With over 27 years of expertise, she has successfully treated numerous complex cases and provided compassionate care to women at every stage of life. She has also served as a Senior Consultant for Women's Health at Fatima Hospital, Lucknow, where she earned a reputation for excellence in maternal and reproductive healthcare.",
+      description: "Dr. Amita Gupta, MBBS, DGO (K.G.M.C) FRM, and Diploma in Urogynecology (Germany), is a highly experienced gynecologist specializing in infertility management, hysteroscopy, and laparoscopic procedures. With over 27 years of expertise, she has successfully treated numerous complex cases and provided compassionate care to women at every stage of life. She has also served as a Senior Consultant for Women's Health at Fatima Hospital, Lucknow, where she earned a reputation for excellence in maternal and reproductive healthcare.",
       image: "https://res.cloudinary.com/dxknbk2hd/image/upload/v1757836599/matra-drishti-medicare/dr.amit_r5zjci.jpg", // Replace with actual image path
       specialties: ["Infertility Treatment", "Hysteroscopy", "Laparoscopic Gynecology", "Women's Health"],
       experience: "27+ Years",

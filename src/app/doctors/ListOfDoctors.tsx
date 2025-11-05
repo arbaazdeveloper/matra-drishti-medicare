@@ -15,7 +15,7 @@ const DoctorsListPage = () => {
     }
   };
 
-  const itemVariants :Variants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -39,7 +39,7 @@ const DoctorsListPage = () => {
       color: "bg-pink-50",
       borderColor: "border-pink-200",
       textColor: "text-pink-600",
-      profile:'/doctors/dr-amita-gupta'
+      profile: '/doctors/dr-amita-gupta'
     },
     {
       name: "DR. Rajesh Gupta",
@@ -51,9 +51,22 @@ const DoctorsListPage = () => {
       color: "bg-purple-50",
       borderColor: "border-purple-200",
       textColor: "text-purple-600",
-       profile:'/doctors/dr-rajesh-gupta'
+      profile: '/doctors/dr-rajesh-gupta'
+    },
+    {
+      name: "Dr. Bhadauria",
+      title: "Senior Cardiologist",
+      description:
+        "Dr. Bhadauria, MBBS, DIPCARD, is a highly distinguished cardiologist with over 30 years of dedicated medical service. He has previously served as a Senior Cardiologist at Balrampur Hospital, where he earned immense respect for his expertise in managing complex cardiac cases. His compassionate approach, combined with decades of experience, makes him one of the most trusted names in heart care.",
+      image: "https://res.cloudinary.com/dxknbk2hd/image/upload/v1762327384/matra-drishti-medicare/icon-7797704_640_cwnxku.png",
+      specialties: ["Cardiology", "Heart Disease Management", "Hypertension", "Preventive Cardiology"],
+      experience: "30+ Years",
+      color: "bg-purple-50",
+      borderColor: "border-purple-200",
+      textColor: "text-purple-600",
+      profile: "/doctors/dr-bhadauria"
     }
-    
+
   ];
 
   return (
@@ -61,7 +74,7 @@ const DoctorsListPage = () => {
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-bold mb-6 playfair-font"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +82,7 @@ const DoctorsListPage = () => {
           >
             Our Medical Team
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -77,7 +90,7 @@ const DoctorsListPage = () => {
           >
             Meet our team of experienced healthcare professionals dedicated to providing exceptional care.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-white mx-auto mt-6"
             initial={{ width: 0 }}
             animate={{ width: 96 }}
@@ -98,9 +111,9 @@ const DoctorsListPage = () => {
               <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Surgery</button>
             </div>
             <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Search doctors..." 
+              <input
+                type="text"
+                placeholder="Search doctors..."
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
               />
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,13 +152,13 @@ const DoctorsListPage = () => {
                     {doctor.experience}
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-1">{doctor.name}</h3>
                   <p className="text-pink-600 font-medium mb-4">{doctor.title}</p>
-                  
+
                   <p className="text-gray-700 text-sm mb-4 line-clamp-3">{doctor.description}</p>
-                  
+
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-800 mb-2">Specialties:</h4>
                     <div className="flex flex-wrap gap-2">
@@ -156,9 +169,9 @@ const DoctorsListPage = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col gap-3 mt-6">
-                    <motion.button 
+                    <motion.button
                       className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -166,14 +179,14 @@ const DoctorsListPage = () => {
                       Book Appointment
                     </motion.button>
                     <Link href={doctor.profile}>
-                    
-                    <motion.button 
-                      className="border w-full border-pink-500 text-pink-600 hover:bg-pink-50 font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      View Profile
-                    </motion.button>
+
+                      <motion.button
+                        className="border w-full border-pink-500 text-pink-600 hover:bg-pink-50 font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        View Profile
+                      </motion.button>
                     </Link>
                   </div>
                 </div>
@@ -182,7 +195,7 @@ const DoctorsListPage = () => {
           </motion.div>
 
           {/* Load More Button */}
-    
+
         </div>
       </section>
 
@@ -195,18 +208,18 @@ const DoctorsListPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href={'/contact'}>
-            
-            <motion.button 
-              className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Our Helpdesk
-            </motion.button>
+
+              <motion.button
+                className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Our Helpdesk
+              </motion.button>
             </Link>
-           
+
             <motion.a
-            href='tel:7499931560'
+              href='tel:7499931560'
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

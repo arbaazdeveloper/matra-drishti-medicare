@@ -19,6 +19,7 @@ export default function AppointmentBooking() {
     const doctors: Doctor[] = [
         { id: 1, name: 'Dr. Amita Gupta', specialty: 'Gynaecologist' },
         { id: 2, name: 'Dr.Rajesh Kumar Gupta', specialty: 'Optalmologist' },
+        { id: 3, name: 'Dr.Bhadauria', specialty: 'Cardiologist' },
 
     ];
 
@@ -37,7 +38,7 @@ Message: ${message || 'No message provided'}`;
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 py-12 px-4  sm:px-10 lg:px-10 flex justify-center items-center">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 py-24 px-4  sm:px-10 lg:px-10 flex justify-center items-center">
             <Head>
                 <title>Book an Appointment</title>
                 <meta name="description" content="Book a doctor appointment" />
@@ -46,7 +47,7 @@ Message: ${message || 'No message provided'}`;
             <div className="max-w-md mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="px-6 py-8">
                     <div className="text-center">
-                        <h1 className="text-3xl font-bold text-gray-900 mb-2">Book an Appointment</h1>
+                        <h1 className="text-3xl font-bold text-gray-900 mb-2">Book an Appointment Via Whatsapp</h1>
                         <p className="text-gray-600">Fill out the form below to schedule your visit Our Team You Contact You</p>
                     </div>
 

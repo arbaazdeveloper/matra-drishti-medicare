@@ -1,5 +1,6 @@
 "use client"
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -227,15 +228,18 @@ const OurHospital = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <motion.div
-                        className="bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl p-8 h-96 flex items-center justify-center"
+                        className="bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl p-8 h-96 flex items-center justify-center relative"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-64 w-64 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                    > 
+                        <Image
+                            src={'https://lh3.googleusercontent.com/p/AF1QipMi-JQrzu1aHc_qy9OsDJO5FL3HwkSgnvqlWJBb=s1360-w1360-h1020-rw'}
+                            className='object-cover h-full w-full rounded-2xl'
+                            fill
+                            alt={'clinic'}
+                        />
                     </motion.div>
 
                     <motion.div
@@ -263,13 +267,15 @@ const OurHospital = () => {
                             ))}
                         </div>
 
-                        <motion.button
-                            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full md:w-auto"
+                        <motion.a
+                         href='https://share.google/nvsQY4J3a2o89ttUz'
+                         target='_blank'
+                            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold text-center py-3 px-6 rounded-lg transition-colors w-full md:w-auto"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Take a Virtual Tour
-                        </motion.button>
+                        </motion.a>
                         <Link href={'/about/hospital'} className="bg-transparent border-2 my-1.5 text-center border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                             Learn More Hospital
                         </Link>
@@ -326,28 +332,34 @@ const OurClinic = () => {
                             ))}
                         </div>
 
-                        <motion.button
+                        <motion.a
+                        href='https://share.google/BZ8JvdeR6C9jm4Rpx'
+                        target='_blank'
                             className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full md:w-auto"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Schedule a Visit
-                        </motion.button>
-                         <Link href={'/about/clinic'} className="bg-transparent border-2 my-1.5 text-center border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        </motion.a>
+                        <Link href={'/about/clinic'} className="bg-transparent border-2 my-1.5 text-center border-pink-500 text-pink-500 hover:bg-pink-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                             Learn More Clinic
                         </Link>
                     </motion.div>
 
                     <motion.div
-                        className="bg-gradient-to-br from-pink-400 to-purple-400 rounded-2xl p-8 h-96 flex items-center justify-center order-1 md:order-2"
+                        className="  rounded-2xl p-8 h-96 flex items-center justify-center order-1 md:order-2 relative"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-64 w-64 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                        <Image
+                            src={'https://lh3.googleusercontent.com/p/AF1QipMn2IoJZXEnPDR2xJS9hW2GjzWdHqw3GhWZOqbJ=s1360-w1360-h1020-rw'}
+                            className='object-cover h-full w-full rounded-2xl'
+                            fill
+                            alt={'clinic'}
+                        />
+
                     </motion.div>
                 </div>
             </div>
@@ -429,8 +441,10 @@ const AboutUsPage = () => {
                     >
                         Schedule your appointment today and discover why thousands of women trust us with their healthcare needs.
                     </motion.p>
-                    <motion.button
-                        className="bg-white text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                    <Link href={'/appointment'}>
+                    
+                    <motion.span
+                        className="bg-white m-auto text-pink-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
@@ -439,7 +453,8 @@ const AboutUsPage = () => {
                         whileTap={{ scale: 0.95 }}
                     >
                         Book an Appointment
-                    </motion.button>
+                    </motion.span>
+                    </Link>
                 </div>
             </section>
 

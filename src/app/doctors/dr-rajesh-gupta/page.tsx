@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Best Eye Surgeon in Lucknow | Dr. Rajesh Gupta - Cataract & Ophthalmic Specialist",
   description:
-    "Dr. Rajesh Gupta, MBBS, DOMS, FCLI, Fellow S.N.C Chitrakoot, is a senior eye surgeon in Lucknow with 15+ years of experience. Founder of Matra Dristi Medicare, he has successfully performed over 10,000 eye surgeries including cataract, refractive, and advanced ophthalmic procedures.",
+    "Dr. Rajesh Gupta, MBBS, DOMS, FCLI, Fellow S.N.C Chitrakoot, is a senior eye surgeon in Lucknow with 30+ years of experience. Founder of Matra Dristi Medicare, he has successfully performed over 10,000 eye surgeries including cataract, refractive, and advanced ophthalmic procedures.",
   keywords: [
     "Best Eye Surgeon in Lucknow",
     "Dr. Rajesh Gupta Lucknow",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Eye Surgeon in Lucknow | Dr. Rajesh Gupta",
     description:
-      "Consult Dr. Rajesh Gupta, senior eye surgeon and founder of Matra Dristi Medicare, Lucknow. With 15+ years of expertise and 10,000+ successful surgeries, he specializes in cataract, refractive, and advanced ophthalmic treatments.",
+      "Consult Dr. Rajesh Gupta, senior eye surgeon and founder of Matra Dristi Medicare, Lucknow. With 30+ years of expertise and 10,000+ successful surgeries, he specializes in cataract, refractive, and advanced ophthalmic treatments.",
     url: "https://www.matradrishtimedicare.in/doctors/dr-rajesh-gupta", // replace with actual URL
     type: "profile",
     images: [

@@ -35,7 +35,7 @@ const DoctorProfilePage = () => {
                 <div
                     className="absolute inset-0 z-0"
                     style={{
-                        backgroundImage: `url(https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80)`,
+                        backgroundImage: `url("https://plus.unsplash.com/premium_photo-1661277714739-7586d07ae3a6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470")`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
@@ -73,7 +73,7 @@ const DoctorProfilePage = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Contact Doctor
+                                Call
                             </motion.a>
                         </motion.div>
 
@@ -289,8 +289,18 @@ const DoctorProfilePage = () => {
                                 {[
                                     {
                                         degree: "MBBS",
-                                        institution: "NA",
-                                        year: "NA"
+                                        institution: "",
+                                        year: ""
+                                    },
+                                    {
+                                        degree: "DOMS",
+                                        institution: "",
+                                        year: ""
+                                    },
+                                      {
+                                        degree: "FCLI",
+                                        institution: "",
+                                        year: ""
                                     },
                                 
                                 ].map((item, index) => (
@@ -430,7 +440,7 @@ const DoctorProfilePage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 playfair-font">Schedule Your Appointment Today</h2>
                     <p className="text-xl mb-8 max-w-3xl mx-auto">
-                        Experience the exceptional care that has made Dr.Rajesh one of Lucknow's most trusted gynecologists
+                        Experience the exceptional care that has made Dr.Rajesh one of Lucknow's most trusted Ophthalmologist
                     </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link href={'/appointment'}
