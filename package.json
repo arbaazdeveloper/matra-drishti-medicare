@@ -12,6 +12,7 @@
     "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
+    "@next/third-parties": "^16.0.3",
     "framer-motion": "^12.23.12",
     "next": "15.5.2",
     "nextjs-toploader": "^3.9.17",

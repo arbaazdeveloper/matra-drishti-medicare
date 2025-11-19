@@ -6,6 +6,7 @@ import Footer from "@/components/Footer/Footer";
 import WhatsAppButton from "@/components/WhatsappButton/WhatsappButton";
 import TopHeaderBar from "@/components/Topheader/TopHeader";
 import NextTopLoader from "nextjs-toploader";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="AW-17702506706" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
